@@ -1,19 +1,19 @@
-This is a template for course IDS706 Projects. It contains:
+# Iris Classification ML Project with MLflow
 
-1. `.devcontainer` includes a Dockerfile and devcontainer.json. The 'Dockerfile' within this folder specifies how the container should be built, and other settings in this directory may control development environment configurations.
+This project demonstrates the use of a machine learning model to classify the Iris dataset. The model is built using the RandomForestClassifier from the scikit-learn library. Additionally, the project employs MLflow for tracking experiments, including parameters and metrics. The project is structured to facilitate continuous integration and deployment using GitHub Actions.
 
-2. `workflows` includes GitHub Actions, which contain configuration files for setting up automated build, test, and deployment pipelines for your project.
+## Structure
 
-3. `.gitignore` is used to specify which files or directories should be excluded from version control when using Git.
+`main.py``: Contains the code for loading data, training the model, making predictions, and tracking the experiment with MLflow.
+`requirements.txt``: Lists the Python dependencies required for the project.
+`Makefile``: Includes commands for setting up the project environment, running tests, formatting code, and linting.
+``.github/workflows/cicd.yml``: Defines the GitHub Actions workflow for continuous integration and deployment.
 
-4. `Makefile` is a configuration file used in Unix-based systems for automating tasks and building software. It contains instructions and dependencies for compiling code, running tests, and other development tasks.
+## MLflow Tracking
 
-5. `README.md` is the instruction file for the readers.
+MLflow was pivotal for tracking experiments and managing the RandomForestClassifier model, enhancing both organization and reproducibility. Its integration into our CI/CD pipeline streamlined the model training and evaluation process, significantly contributing to efficient MLOps practices.
 
-6. `requirements.txt` is to specify the dependencies (libraries and packages) required to run the project.
+To view the MLflow tracking UI:
 
-7. `test_main.py` is a test file for main.py that can successfully run in IDEs.
-
-8. `main.py` is a Python file.
-
-It used gitbuh actions to test and run. All processes are completed.
+1. Run `mlflow ui` or `mlflow ui --port` followed with the number of port of your choice (e.g. `mlflow ui --port 5001`)
+2. Open the localhost URL shown in your terminal
